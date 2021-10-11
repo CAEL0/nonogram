@@ -171,14 +171,6 @@ while True:
                 back = True
                 i -= 1
 
-    # i번째 row를 처음 방문
-    elif not back:
-        first(i)
-        if check(i):
-            i += 1
-        else:
-            back = True
-    
     # 백트래킹 중
     elif back:
         if islast(i):
@@ -190,3 +182,11 @@ while True:
             if check(i):
                 back = False
                 i += 1
+
+    # i번째 row를 처음 방문
+    else:
+        first(i)
+        if check(i):
+            i += 1
+        else:
+            back = True
