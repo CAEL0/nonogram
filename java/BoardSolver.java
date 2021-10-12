@@ -208,11 +208,6 @@ public final class BoardSolver implements IBoardSolver {
 					}
 				}
 			}
-			else if (back == false) {
-				fillFirstStep(board, r);
-				if (check(board, r)) { r++; }
-				else { back = true; }
-			}
 			else if (back) {
 				if (isLastStep(board, r)) {
 					for (int c = 0; c < m; c++) {
@@ -230,6 +225,11 @@ public final class BoardSolver implements IBoardSolver {
 						r++;
 					}
 				}
+			}
+			else {
+				fillFirstStep(board, r);
+				if (check(board, r)) { r++; }
+				else { back = true; }
 			}
 		}
     }
